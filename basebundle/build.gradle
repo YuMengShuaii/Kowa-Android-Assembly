@@ -1,0 +1,52 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.taobao.atlas'
+//apply plugin: 'maven-publish'
+atlas {
+    bundleConfig{
+        awbBundle true
+    }
+    buildTypes {
+        debug {
+            baseApFile project.rootProject.file('main/build/outputs/apk/main-debug.ap')
+        }
+    }
+}
+group = 'com.javashop.android'
+version = '1.0.1'
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionCode
+        versionName version
+    }
+    lintOptions {
+        abortOnError false
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:support-v4:25.0.0'
+    compile 'com.android.support:appcompat-v7:25.0.0'
+    //================================================
+    testCompile 'junit:junit:4.12'
+    providedCompile project(':javashoplib')
+    providedCompile project(':PushSDK')
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}

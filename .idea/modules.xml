@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/PushSDK/PushSDK.iml" filepath="$PROJECT_DIR$/PushSDK/PushSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/YMSFrame.iml" filepath="$PROJECT_DIR$/YMSFrame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basebundle/basebundle.iml" filepath="$PROJECT_DIR$/basebundle/basebundle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/firstbundle/firstbundle.iml" filepath="$PROJECT_DIR$/firstbundle/firstbundle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javashoplib/javashoplib.iml" filepath="$PROJECT_DIR$/javashoplib/javashoplib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/main/main.iml" filepath="$PROJECT_DIR$/main/main.iml" />
+    </modules>
+  </component>
+</project>

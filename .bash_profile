@@ -1,0 +1,1 @@
+export PATH=/Users/Android/MAC_SDK/platform-tools/:$PATH

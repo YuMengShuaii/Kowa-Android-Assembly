@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="河北省"
+        android:id="@+id/picker_item_tv"
+        android:textColor="#666666"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:background="#ffffff"
+        />
+</LinearLayout>

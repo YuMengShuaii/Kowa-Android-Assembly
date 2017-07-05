@@ -1,0 +1,145 @@
+
+apply plugin: 'com.android.library'
+
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+    lintOptions {
+        abortOnError false
+    }
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+
+    }
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+    }
+}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+    compile files('libs/AMap2DMap_4.2.0_AMapSearch_4.0.0_AMapLocation_3.3.0_20170120.jar')
+    /**
+     * support包
+     *
+     */
+    compile 'com.android.support:design:25.0.0'
+    compile 'com.android.support:support-v4:25.0.0'
+    compile 'com.android.support:cardview-v7:25.0.0'
+
+    /**
+     *     rxjava + retrofit网络相关
+     */
+    compile 'io.reactivex:rxjava:1.1.0'
+    compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'com.squareup.retrofit2:retrofit:+'
+    compile 'com.squareup.retrofit2:converter-gson:+'
+    compile 'com.squareup.retrofit2:adapter-rxjava:+'
+    compile 'com.google.code.gson:gson:+'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    /**
+     * Fragment嵌套动画
+     * 神器暂时不用
+     */
+//    compile 'me.yokeyword:fragmentation:0.10.4'
+//    compile 'me.yokeyword:fragmentation-swipeback:0.10.4'
+    /**
+     *   Cookies维护
+     */
+    compile 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
+    /**
+     * Glide框架
+     */
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    /**
+     * 刷新数据控件
+     */
+    compile 'com.lcodecorex:tkrefreshlayout:1.0.5'
+    /**
+     * Glide过滤效果
+     */
+    compile 'jp.wasabeef:glide-transformations:2.0.1'
+    // If you want to use the GPU Filters
+    /**
+     * 强制GPU渲染
+     */
+    compile 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.3.0'
+    /**
+     * recycleView 适配器 可以不用
+     */
+    compile 'com.zhy:base-rvadapter:3.0.3'
+    /**
+     * 七巧板框架暂时不用
+     */
+    //compile 'com.alibaba.android:tangram:1.0.0@aar'
+
+    /**
+     * 自定义Tabbar，按需使用
+     */
+    //compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.0@aar'
+
+    /**
+     * 动画框架 巨牛逼
+     */
+    compile 'com.airbnb.android:lottie:1.5.3'
+
+    /**
+     * 图片选择器
+     */
+    compile 'com.jph.takephoto:takephoto_library:4.0.3'
+    /**
+     * AOP相关
+     */
+    compile 'org.aspectj:aspectjrt:1.8.9'
+    /**
+     * 分享
+     */
+    compile files('libs/SocialSDK_email.jar')
+    compile files('libs/SocialSDK_QQ_Simplify.jar')
+    compile files('libs/SocialSDK_sms.jar')
+    compile files('libs/SocialSDK_WeChat_Simplify.jar')
+    compile files('libs/umeng_shareboard_widget.jar')
+    compile files('libs/umeng_social_api.jar')
+    compile files('libs/umeng_social_net.jar')
+    compile files('libs/umeng_social_shareboard.jar')
+    compile files('libs/umeng_social_tool.jar')
+    /**
+     * 支付宝支付
+     */
+    compile files('libs/alipaysdk.jar')
+    compile files('libs/alipayutdid.jar')
+    compile files('libs/alipaysecsdk.jar')
+    /**
+     * 微信支付
+     */
+    compile files('libs/libammsdk.jar')
+    compile files('libs/org.apache.http.legacy.jar')
+    /**
+     * 银联支付
+     */
+    compile files('libs/UPPayAssistEx.jar')
+    compile files('libs/UPPayPluginExPro.jar')
+}
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}

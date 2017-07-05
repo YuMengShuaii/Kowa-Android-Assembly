@@ -1,0 +1,4 @@
+{
+  "name": "LaunchBundle",
+  "dependency": ["com.mobile.app.javashop"]
+}

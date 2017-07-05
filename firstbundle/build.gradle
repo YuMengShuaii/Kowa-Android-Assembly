@@ -1,0 +1,131 @@
+//
+//buildscript {
+//    repositories {
+//        mavenLocal()
+//        jcenter()
+//    }
+//    dependencies {
+//        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+//        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
+//    }
+//}
+
+apply plugin: 'com.android.library'
+apply plugin: 'com.taobao.atlas'
+//apply plugin: 'maven-publish'
+atlas {
+    bundleConfig{
+        awbBundle true
+    }
+    buildTypes {
+        debug {
+            baseApFile project.rootProject.file('main/build/outputs/apk/main-debug.ap')
+        }
+    }
+}
+group = 'com.javashop.android'
+version = '1.0.1'
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionCode 2
+        versionName version
+    }
+    lintOptions {
+        abortOnError false
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    providedCompile 'com.android.support:support-v4:25.0.0'
+    providedCompile 'com.android.support:appcompat-v7:25.0.0'
+    providedCompile project(':basebundle')
+    testCompile 'junit:junit:4.12'
+}
+//apply plugin: 'com.github.dcendents.android-maven'
+//apply plugin: 'com.jfrog.bintray'
+//
+//
+//def siteUrl = 'https://github.com/YuMengShuaii/Comtre-single'
+//// 项目的主页
+//def gitUrl = 'https://github.com/YuMengShuaii/Comtre-single'
+//// Git仓库的url
+//install {
+//    repositories.mavenInstaller {
+//        // This generates POM.xml with proper parameters
+//        pom {
+//            project {
+//                packaging 'awb'
+//                // Add your description here
+//                name 'firstbundle' //项目描述
+//                // Set your license
+//                licenses {
+//                    license {
+//                        name 'The Apache Software License, Version 2.0'
+//                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//                    }
+//                }
+//                developers {
+//                    developer {
+//                        id 'yumengshuai' //填写的一些基本信息
+//                        name project.name
+//                        email 'yumengshuai@gmail.com'
+//                    }
+//                }
+//                scm {
+//                    connection gitUrl
+//                    developerConnection gitUrl
+//                    url siteUrl
+//                }
+//            }
+//        }
+//    }
+//}
+//
+//Properties properties = new Properties()
+//def file = project.rootProject.file('local.properties')
+//if (file.exists()) {
+//    properties.load(file.newDataInputStream())
+//}
+//bintray {
+//    user = properties.getProperty("bintray.user")
+//    key = properties.getProperty("bintray.apikey")
+////    configurations = ['archives']
+//    publications = ['maven']
+//    pkg {
+//        repo = "maven"
+//        name = project.name	//发布到JCenter上的项目名字
+//        websiteUrl = siteUrl
+//        vcsUrl = gitUrl
+//        licenses = ["Apache-2.0"]
+//        publish = true
+//    }
+//}
+//
+//task sourcesJar(type: Jar) {
+//    from('src/main/java') {
+//        include '**'
+//    }
+//    classifier = 'sources'
+//}
+//
+//publishing {
+//    publications {
+//        maven(MavenPublication) {
+//            artifact "${project.buildDir}/outputs/awb/${project.name}-release.awb"
+//            artifact sourcesJar
+//        }
+//    }
+//}
